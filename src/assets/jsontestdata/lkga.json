@@ -1,0 +1,79 @@
+[
+    {
+        "course_id": 1,
+        "year_no": 1,
+        "sno": 1,
+        "roll_no": "LKG 25 0001",
+        "stud_name": "AMELIA AILEEN E N"
+    },
+    {
+        "course_id": 1,
+        "year_no": 1,
+        "sno": 2,
+        "roll_no": "LKG 25 0002",
+        "stud_name": "ARSHIKA  R A"
+    },
+    {
+        "course_id": 1,
+        "year_no": 1,
+        "sno": 3,
+        "roll_no": "LKG 25 0003",
+        "stud_name": "BESLIN SAM  B"
+    },
+    {
+        "course_id": 1,
+        "year_no": 1,
+        "sno": 4,
+        "roll_no": "LKG 25 0004",
+        "stud_name": "BRIYONA S VERSI"
+    },
+    {
+        "course_id": 1,
+        "year_no": 1,
+        "sno": 5,
+        "roll_no": "LKG 25 0005",
+        "stud_name": "HARSHAN  H"
+    },
+    {
+        "course_id": 1,
+        "year_no": 1,
+        "sno": 6,
+        "roll_no": "LKG 25 0006",
+        "stud_name": "JERONA  J"
+    },
+    {
+        "course_id": 1,
+        "year_no": 1,
+        "sno": 7,
+        "roll_no": "LKG 25 0007",
+        "stud_name": "JOHN BRITTO J B"
+    },
+    {
+        "course_id": 1,
+        "year_no": 1,
+        "sno": 8,
+        "roll_no": "LKG 25 0008",
+        "stud_name": "LEONA L K"
+    },
+    {
+        "course_id": 1,
+        "year_no": 1,
+        "sno": 9,
+        "roll_no": "LKG 25 0009",
+        "stud_name": "MADEV  G U"
+    },
+    {
+        "course_id": 1,
+        "year_no": 1,
+        "sno": 10,
+        "roll_no": "LKG 25 0010",
+        "stud_name": "SHEMITHA RINO S"
+    },
+    {
+        "course_id": 1,
+        "year_no": 1,
+        "sno": 11,
+        "roll_no": "LKG 25 0011",
+        "stud_name": "JASWANTH SAI  K"
+    }
+]

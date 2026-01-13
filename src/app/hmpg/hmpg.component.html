@@ -1,0 +1,87 @@
+<div style="margin-top: 60px;"> </div>
+
+
+
+    <nav class="navbar fixed-top navbar-light headerbg " >
+  <div class="container-fluid headerbg" style="padding-left: 0px;padding-right: 0px;"> 
+    <a class="navbar-brand text-white" href="#" >Dr. Rina Rosilla</a>
+  </div>
+</nav>
+
+<div class="container"> 
+
+
+
+<div class="row">
+    <div class="col-12 col-sm-6 col-md-4"  *ngFor="let course of clsCourse">
+<div class="card"  style="border-radius: 10px;"  [ngClass]="{ 'pharmdbg': course.course_name === 'PHARM D',
+ 'mpharmbg': course.course_name === 'M.PHARM',
+ 'bpharmbg': course.course_name === 'B.PHARM'}" >
+                <div class="card-body" >
+                    <h5 class="card-title">
+                        <div class="d-flex justify-content-between">
+                            <div>{{course.course_name}}</div>
+                            <div *ngIf="InstituteType=='C'">
+
+                            <div class="text-danger" *ngIf="course.year_no==1">{{course.year_no}}st YEAR </div>
+                            <div class="text-danger" *ngIf="course.year_no==2">{{course.year_no}}nd YEAR </div>
+                            <div class="text-danger" *ngIf="course.year_no==3">{{course.year_no}}rd YEAR </div>
+                            <div class="text-danger" *ngIf="course.year_no==4">{{course.year_no}}th YEAR </div>
+                            <div class="text-danger" *ngIf="course.year_no==5">{{course.year_no}}th YEAR </div>
+                            <div class="text-danger" *ngIf="course.year_no==6">{{course.year_no}}th YEAR </div>
+                              </div>
+                            
+                               <div class="text-danger" *ngIf="InstituteType=='S'">[{{course.section}} Section]</div>
+
+
+
+                        </div>
+                    </h5>
+                    <h6 class="card-subtitle mb-2 text-muted"  *ngIf="InstituteType=='C'">({{course.course_desc}})</h6>
+                    
+                    <p class="card-text text-success">TOTAL STRENGTH : {{course.total_strength}} </p>
+
+                    <div class="d-flex justify-content-between">
+                       <div><a (click)="fnGoToAttendance(course)"
+                        style="color: BLUE;"
+                        > ATTENDANCE</a></div>
+                        <div></div>
+                        <div><a href="#/home"   style="color: BLUE;">HISTORY</a></div>
+                    </div>
+
+                </div>
+            </div>
+    </div>
+</div>
+ 
+
+
+</div>
+<div class="mt-4"></div>
+
+
+    <nav class="navbar fixed-bottom navbar-light footerbg " style="display: block;" >
+  <div class="text-center text-white">
+    <span style="font-weight: 600;font-size: 18px;" (click)="fnLogout()" >
+        <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+            </span>
+
+  </div>
+</nav>
+
+<nav class="navebar fixed-bottom navbar-light bg-light mb-0"  style="display: none;" >
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-6 text-left ">
+            <span style="font-weight: 600;font-size: 18px;"><i class="fa-solid fa-chevron-left"></i> Back
+            </span>
+            </div>
+
+                <div class="col-6 text-right ">
+            <span style="font-weight: 600;font-size: 18px;"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+            </span>
+            </div>        
+    </div>
+    
+  </div>
+</nav>

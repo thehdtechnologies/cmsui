@@ -1,0 +1,27 @@
+.headerbg
+{
+    /*background-color: #dfb6b2;*/
+    background-color: #052659;
+}
+.footerbg
+{
+     /*background-color: #dfb6b2;*/
+    background-color: #052659;
+}
+.appbg
+{
+    /*background-color: #c1e8ff;*/
+    background-color: #fbe4d8;
+}
+
+.contentwosubheader {
+  flex: 1;
+  margin-top: 60px; /* navbar  */
+  margin-bottom: 60px; /* footer height */
+  overflow-y: auto;  /* enable scrolling */
+}
+
+myelement {
+  border-radius: 15px 50px 30px 5px;
+  /* Top-left: 15px, Top-right: 50px, Bottom-right: 30px, Bottom-left: 5px */
+}

@@ -1,0 +1,153 @@
+
+<div class="page">
+  <header class="fixed-top">
+    <!-- ... your navbar ... -->
+    <nav class="navbar fixed-top navbar-light headerbg ">
+      <div class="container-fluid headerbg" style="padding-left: 0px;padding-right: 0px;">
+        <table style="width: 100%;">
+          <tr>
+            <td class="text-left">
+              <a class="navbar-brand text-white" href="#">Dr. Rina Rosilla</a>
+            </td>
+            <td class="text-right">
+              <a class="navbar-brand  text-white" style="margin-right: 0px;" (click)="fnMoveToHomePage()">
+                << Back</a>
+            </td>
+          </tr>
+        </table>
+  
+      </div>
+  
+    </nav>
+  </header>
+
+
+  <div class="subheader">
+     <!-- ... your subheader ...  -->
+      
+<div class="container-fluid" style="padding-left: 0px; padding-right: 0px;"   >
+     <div class="card-body" style="background-color: #ecf2fa;padding: 7px;">
+                    <div class="card-title">
+                        <div class="d-flex justify-content-between">
+                            <div> <b>{{CourseName}}</b>
+
+                            
+                            <span class="text-danger ml-2" *ngIf="YearNo==1 && InstituteType=='C'">{{YearNo}}st YEAR </span>
+                            <span class="text-danger ml-2" *ngIf="YearNo==2 && InstituteType=='C'">{{YearNo}}nd YEAR </span>
+                            <span class="text-danger ml-2" *ngIf="YearNo==3 && InstituteType=='C'">{{YearNo}}rd YEAR </span>
+                            <span class="text-danger ml-2" *ngIf="YearNo==4 && InstituteType=='C'">{{YearNo}}th YEAR </span>
+                            <span class="text-danger ml-2" *ngIf="YearNo==5 && InstituteType=='C'">{{YearNo}}th YEAR </span>
+                            <span class="text-danger ml-2" *ngIf="YearNo==6 && InstituteType=='C'">{{YearNo}}th YEAR </span>
+                          
+                            <span *ngIf="InstituteType=='S'" class="text-danger ml-2" >[{{ClassSection}} Section] </span>
+                          
+                          </div>  
+                           <b>
+                              <div >TOTAL STRENGTH : {{NoOfStud}} </div></b>
+                             <!-- <p class="card-text text-success"></p> -->
+
+                        </div>
+                      </div>
+                   
+                     <div class="d-flex justify-content-between">
+                          <div>                      
+                          <input type="date" (change)="fnDateOnChange()" [(ngModel)]="SelectedDate" name="date" style="width:23px" />
+                          {{SelectedDate|date}}
+                          </div> 
+                          <div>                            
+                          </div>
+                          <div> Present : {{sPresentCnt}}
+                            Absent : {{sAbsentCnt}}           
+                          </div>
+
+                     </div>
+
+                     
+                   
+
+
+                </div>
+</div>
+
+    </div>
+
+  <div class="content">
+    <div class="table-container">
+      <table class="data-table">
+        <thead>
+    <tr>
+      <th scope="col" style="width: 10%;">S.No.</th>
+      <th scope="col" style="width: 60%;">Name
+        
+        <span class="ml-2">
+          <input type="text" (keyup)="fnSearchKeyup()" placeholder="Search..." [(ngModel)]="searchText"
+            style="width:60%;border: 0px;border-bottom: 1px solid gray;" />
+           <i *ngIf="searchText!=''" (click)="fnClearSearch()" class="fa-solid fa-xmark"></i>
+        </span>
+
+
+      </th>
+      <th scope="col" style="width: 30%;text-align: center;">Present/Absent
+        <!-- [Select All]  -->
+        <div class="custom-control custom-switch">
+           <div class="save-popup"  style="top:-8px" *ngIf="showSeletAllSaveMsg">          
+           ✔  
+        </div>
+        <input type="checkbox" [(ngModel)]="boolSelectAll" (click)="fnSelectAll()" class="custom-control-input" id="customSwitch1">
+        <label class="custom-control-label" for="customSwitch1">
+        </label>
+        </div> 
+      </th>
+      
+    </tr>
+  </thead>
+        <tbody>
+    <tr  *ngFor="let item  of filteredItems ;let i = index">
+      <th scope="row">{{item.sno}}</th>
+      <td   (click)="showDetails(i)"
+            (mouseleave)="hideDetails()"   
+       > {{item.stud_name}}
+      <div *ngIf="hoveredRowIndex === i"  >
+          <div class="badge badge-secondary" [innerHTML]="getSafeHtml(item.roll_no)"></div>
+        </div>
+
+      </td>
+      <td style="text-align: center;">
+       
+
+        <div class="custom-control custom-switch">
+            <div class="save-popup" *ngIf="item.showSaveMsg==true" style="top:-8px">          
+           ✔  
+        </div>
+        <input type="checkbox" (click)="fnCheckboxClicked(item)" [(ngModel)]="item.presentabsent" class="custom-control-input" id="customSwitch_{{i}}">
+        <label class="custom-control-label" for="customSwitch_{{i}}">
+        </label>
+        
+       
+
+        </div></td>
+      
+    </tr>
+   
+  </tbody>
+
+      </table>
+    </div>
+  </div>
+
+  <footer class="fixed-bottom"> 
+    <!-- ... footer ...  -->
+    <nav class="navbar fixed-bottom navbar-light" style="display: block;background-color: #052659;" >
+  <div class="text-center text-white">
+    <span style="font-weight: 600;font-size: 18px;" (click)="fnLogout()" >
+        <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+            </span>
+
+  </div>
+</nav>
+  </footer>
+</div>
+
+
+
+<!--OLD CODE-->
